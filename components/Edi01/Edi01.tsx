@@ -13,7 +13,7 @@ interface Step {
 }
 
 export const Edi01: React.FC = () => {
-    const [step, setStep] = useState<number>(7);
+    const [step, setStep] = useState<number>(1);
     const steps: Step[] = [
         {
             id: 2,
