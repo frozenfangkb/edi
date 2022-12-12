@@ -78,7 +78,7 @@ export const Edi01: React.FC = () => {
                             end={{ opacity: 1, transform: "translateY(0)" }}
                         >
                             <div className="paper">
-                                <span>
+                                <span style={{ maxWidth: "65%" }}>
                                     Gracias. Gracias por estar aquí junto a
                                     nosotros, por ser esa persona con la que
                                     siempre podemos contar, por ser la mejor
