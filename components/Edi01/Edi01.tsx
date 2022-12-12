@@ -4,6 +4,7 @@ import styles from "./Edi01.module.css";
 import { Animate } from "react-simple-animate";
 import { Question } from "../Question/Question";
 import { Statement } from "../Statement/Statement";
+import { Final } from "../Final/Final";
 
 interface Step {
     id: number;
@@ -16,27 +17,27 @@ export const Edi01: React.FC = () => {
     const steps: Step[] = [
         {
             id: 2,
-            question: "Es un instrumento que por sí mismo representa a un país",
-            answer: "Gaita",
-        },
-        {
-            id: 3,
             question:
                 "¿Quién inventó el teléfono? Resulta, que es del país al que vamos...",
             answer: "Alexander Graham Bell",
         },
 
         {
-            id: 4,
+            id: 3,
             question:
                 "¿En qué isla o continente se ubica el país en el que se creó el primer cuerpo de bomberos municipal de la historia?",
             answer: "Gran Bretaña",
         },
         {
-            id: 5,
+            id: 4,
             question:
                 "Ella escribió la mayoría de los libros de magia y hechicería más conocidos del mundo en el lugar al que viajaremos",
             answer: "JK Rowling",
+        },
+        {
+            id: 5,
+            question: "Es un instrumento que por sí mismo representa a un país",
+            answer: "Gaita",
         },
         {
             id: 6,
@@ -112,7 +113,13 @@ export const Edi01: React.FC = () => {
                                 currentStep={step}
                             />
                         ))}
-                    {step === 7 && <Statement statements={statements} />}
+                    {step === 7 && (
+                        <Statement
+                            statements={statements}
+                            nextStep={() => setStep(step + 1)}
+                        />
+                    )}
+                    {step === 8 && <Final />}
                 </Paper>
             </div>
         </div>
